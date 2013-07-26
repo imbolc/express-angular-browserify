@@ -36,12 +36,13 @@ app.use(app.router);
 
 // development only
 if (app.get('env') === 'development') {
-  app.use(express.errorHandler());
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 }
 
 // production only
-//if (app.get('env') === 'production') {
-//}
+if (app.get('env') === 'production') {
+  app.use(express.errorHandler());
+}
 
 app.get('/js/app.js', browserify('./client/app.js'));
 
