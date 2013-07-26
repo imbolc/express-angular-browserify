@@ -1,0 +1,6 @@
+div(ng-controller="IndexCtrl")
+  h1 List of users
+  ul
+    li(ng-repeat="user in users")
+      a(ng-href="{{ user.url }}")
+        {{ user.id }}

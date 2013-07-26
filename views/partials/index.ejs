@@ -1,0 +1,8 @@
+<div ng-controller="IndexCtrl">
+  <h1>List of users</h1>
+  <ul>
+    <li ng-repeat="user in users">
+      <a ng-href="{{ user.url }}">{{ user.id }}</a>
+    </li>
+  </ul>
+</div>
